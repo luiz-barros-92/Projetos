@@ -102,7 +102,7 @@ public class ExcsWeapon extends JFrame {
 
 		            resposta.setText("Sua exercise weapon tem " + horas + " horas e " + minutos + " minutos.");
 		            }
-		        } catch (NumberFormatException e) {										//capturando erro de conveersão e pedindo que usuário digite número válido
+		        } catch (NumberFormatException e) {										//capturando erro de conversão e pedindo que usuário digite número válido
 		            resposta.setText("Por favor, insira um número válido.");		
 		        }				
 			}
@@ -116,7 +116,7 @@ public class ExcsWeapon extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		numCargas.addKeyListener(new KeyAdapter() {
 		    @Override
-		    public void keyPressed(KeyEvent e) {										//adicionada a função de disparar o botão calcular com a tecla Ener
+		    public void keyPressed(KeyEvent e) {										//adicionada a função de disparar o botão calcular com a tecla Enter
 		        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 		            calcular.doClick();
 		        }
