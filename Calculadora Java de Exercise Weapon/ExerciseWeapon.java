@@ -62,14 +62,14 @@ public class ExcsWeapon extends JFrame {
 		lblNewLabel_1.setBounds(153, 11, 56, 25);
 		contentPane.add(lblNewLabel_1);
 		
-		numCargas = new JTextField();												//recebendo o valor digitado
+		numCargas = new JTextField();												
 		numCargas.setBounds(121, 39, 123, 25);
 		contentPane.add(numCargas);
 		numCargas.setColumns(10);
 		
 		
 		
-		JLabel resposta = new JLabel("");											//label vazia para inserir a resposta
+		JLabel resposta = new JLabel("");											
 		resposta.setBounds(20, 115, 304, 29);
 		contentPane.add(resposta);
 		
@@ -77,32 +77,32 @@ public class ExcsWeapon extends JFrame {
 	
 		calcular.addActionListener(new ActionListener() {
 			
-			public void actionPerformed(ActionEvent e) {								      //adicionando função calculateTime() ao botão Calcular
+			public void actionPerformed(ActionEvent e) {								     
 				calculateTime();
 			}
 
 			private void calculateTime() {
 				try {
-		            int n = Integer.parseInt(numCargas.getText());				                              //pegando texto de numCargas e convertendo para int
+		            int n = Integer.parseInt(numCargas.getText());				                             
 		            if (n < 0) {
 		                resposta.setText("Por favor, insira um número válido de cargas.");
 		                return;
 		            }
 
-		            int segundos = n * 2;											//lógica da conversão de cargas de 2 segundos para minutos e horas
+		            int segundos = n * 2; //Cada carga de exercise weapon equivale a 2 segundos										
 		            int minutosTotais = segundos / 60;
 		            int horas = minutosTotais / 60;
 		            int minutos = minutosTotais % 60;
-		            if (horas == 1) {												//estrutura condicional para correção de entregar o texto hora no singular ou plural 
+		            if (horas == 1) {												 
 		            	resposta.setText("Sua exercise weapon tem " + horas + " hora e " + minutos + " minutos.");		
-		            }else if(horas == 0) {											//e também para nao mostrar hora caso seja zero
+		            }else if(horas == 0) {											
 		            	
 		            		resposta.setText("Sua exercise weapon tem " + minutos + " minutos.");			
 		            	} else {
 
 		            resposta.setText("Sua exercise weapon tem " + horas + " horas e " + minutos + " minutos.");
 		            }
-		        } catch (NumberFormatException e) {										//capturando erro de conversão e pedindo que usuário digite número válido
+		        } catch (NumberFormatException e) {										
 		            resposta.setText("Por favor, insira um número válido.");		
 		        }				
 			}
@@ -110,13 +110,13 @@ public class ExcsWeapon extends JFrame {
 		calcular.setBounds(121, 75, 123, 29);
 		contentPane.add(calcular);
 		
-		JLabel lblNewLabel_2 = new JLabel("By Luiz Barros");									 //créditos
+		JLabel lblNewLabel_2 = new JLabel("By Luiz Barros");									 
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		lblNewLabel_2.setBounds(267, 11, 67, 14);
 		contentPane.add(lblNewLabel_2);
 		numCargas.addKeyListener(new KeyAdapter() {
 		    @Override
-		    public void keyPressed(KeyEvent e) {										//adicionada a função de disparar o botão calcular com a tecla Enter
+		    public void keyPressed(KeyEvent e) {										
 		        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 		            calcular.doClick();
 		        }
